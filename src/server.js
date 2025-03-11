@@ -11,12 +11,19 @@ dotenv.config();
 const app = express();
 
 
-app.use(cors({
-    origin: "https://blog-management-frontend-psi.vercel.app/",
+app.use(cors({ 
+    origin: function (origin, callback) {
+        if (!origin || origin.endsWith(".vercel.app")) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
     credentials: true, 
     methods: ["GET", "POST", "PUT", "DELETE"], 
     allowedHeaders: ["Content-Type", "Authorization"], 
 }));
+
 
 
 app.use(express.json());
