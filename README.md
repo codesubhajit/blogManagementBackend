@@ -6,7 +6,7 @@ A simple blog management system where users can create, read, update, and delete
 
 🚀 Live Links
 
-https://blog-portal-page.vercel.app/
+https://blog-management-frontend-cj5b.vercel.app/#/
 
 🛠️ Tech Stack
 
